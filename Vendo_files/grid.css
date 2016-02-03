@@ -184,8 +184,7 @@ body .unit.alpha, body .units.alpha {
   clear: both;
 }
 .row,
-.clearfix {
-  zoom: 1;
+.clearfix {zoom:1;
 }
 /* You can also use a <br class="clear" /> to clear units */
 .clear {

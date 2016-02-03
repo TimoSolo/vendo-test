@@ -158,7 +158,10 @@ particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
         margin-right: auto;
         margin-left: auto;
         width: 930px;
+        height: 600px;
         position: relative;
+        clear: both;
+
 
         -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -168,6 +171,16 @@ particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
   user-select: none;           /* non-prefixed version, currently
                                   not supported by any browser */
     }
+    /* reset styles from the web theme */
+    #tslider img {
+        max-width: initial; 
+    }
+    #tslider * {
+        -webkit-box-sizing: initial;
+        box-sizing: initial;
+    }
+
+
     #blur {
         position: absolute;
         -webkit-filter: blur(5px);
@@ -286,7 +299,7 @@ particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
 </style>
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script type="text/javascript">
-    var slides=6;
+    var slides=4; //6;
     var pos=slides-2;
     var width=218;
 
@@ -410,16 +423,49 @@ particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
 </div></section></div></div></div></div>
 
 </div></div></div><!-- close content main div --></div></div><div id="av_section_4" class="avia-section main_color avia-section-huge avia-no-shadow av-section-color-overlay-active avia-bg-style-scroll  avia-builder-el-27  el_after_av_section  avia-builder-el-last  v-orange-section zero-padding-bottom container_wrap fullsize" style="background-color: #f4f4f4; background-color: #f4f4f4; "><div class="av-section-color-overlay-wrap"><div class="av-section-color-overlay" style="opacity: 0.5; background-image: url(http://vendoserve.com/wp-content/uploads/2015/10/grid-bottom-right-white.png); background-repeat: repeat;"></div><div class="container"><div class="template-page content  av-content-full alpha units"><div class="post-entry post-entry-type-page post-entry-10"><div class="entry-content-wrapper clearfix">
+
 <div class="flex_column av_one_full  av-animated-generic top-to-bottom  flex_column_div av-zero-column-padding first  avia-builder-el-28  el_before_av_hr  avia-builder-el-first    avia_start_animation avia_start_delayed_animation" style="border-radius:0px; "><div style="padding-bottom:10px;color:#ffffff;font-size:48px;" class="av-special-heading av-special-heading-h2 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-29  avia-builder-el-no-sibling   av-inherit-size"><h2 class="av-special-heading-tag" itemprop="headline">We specialize in <span class="v-bold">mobile-related</span> ad media:</h2><div class="special-heading-border"><div class="special-heading-inner-border" style="border-color:#ffffff"></div></div></div></div><div style=" margin-top:50px; margin-bottom:50px;" class="hr hr-custom hr-center hr-icon-no  avia-builder-el-30  el_after_av_one_full  el_before_av_one_half  "><span class="hr-inner   inner-border-av-border-thin" style=" width:350px; border-color:#ffffff;"><span class="hr-inner-style"></span></span></div>
-<div class="flex_column av_one_half  flex_column_div av-zero-column-padding first  avia-builder-el-31  el_after_av_hr  el_before_av_one_half   " style="border-radius:0px; "><div class="avia-image-container avia_animated_image avia_animate_when_almost_visible left-to-right av-styling-   avia-builder-el-32  avia-builder-el-no-sibling   avia-align-center  avia_start_animation avia_start_delayed_animation" itemscope="itemscope" itemtype="https://schema.org/ImageObject"><div class="avia-image-container-inner"><img class="avia_image " src="./Vendo_files/phone-top-crop.png" alt="" title="phone-top-crop" itemprop="contentURL"></div></div></div><div class="flex_column av_one_half  av-animated-generic bottom-to-top  flex_column_div av-zero-column-padding   avia-builder-el-33  el_after_av_one_half  avia-builder-el-last    avia_start_animation avia_start_delayed_animation" style="border-radius:0px; "><section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork"><div class="avia_textblock  av_inherit_color" style="color:#ffffff; " itemprop="text"><p><em>We partner with Mobile Network Operators, VAS providers, App developers, and community owners to provide a broad spectrum of advertising potential.<br>
-</em></p>
-<ul>
-<li><strong style="letter-spacing: 2px;">SHORT TEXT ADS:</strong> SMS, USSD, Instant Messages</li>
-<li><strong style="letter-spacing: 2px;">AUDIO ADS:</strong> &nbsp;Advertising Ringback Tones, Audio clips</li>
-<li><strong style="letter-spacing: 2px;">WEB ADS:</strong> &nbsp;Banners, &nbsp;interstitial&nbsp;(coming soon!)</li>
-<li><strong style="letter-spacing: 2px;">NATIVE ADS:</strong> (coming soon!)</li>
-</ul>
-</div></section>
+<div class="" style="border-radius:0px; "></div><div class="f" style="border-radius:0px; "><section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+
+
+<div id="tslider">
+        <div id="blur" >
+            <div class="holder">
+                <img src="screens_blur.png" />
+            </div>
+        </div>
+        <img id="phone" src="iphone-white.png" />
+        <div id="screens">
+            <div class="holder">
+                <img  src="screens.png" />
+                <div id="player">
+                    <div class="song" id="0">Call Bob</div>
+                    <div class="song" id="1">Call Jane</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="controls" >
+            <div id="prev"><!--[if gte IE 9]><!-->
+              <svg width="20" height="20" class="icon-chevron-thin-right">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-chevron-thin-right"></use>
+            </svg>
+            <!--<![endif]--></div>
+            <div id="next"><!--[if gte IE 9]><!-->
+              <svg width="20" height="20" class="icon-chevron-thin-left">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-chevron-thin-left"></use>
+            </svg>
+            <!--<![endif]--></div>
+        </div>
+    </div>
+
+
+
+
+
+
+</section>
 <div style="height:25px" class="hr hr-invisible  avia-builder-el-35  el_after_av_textblock  el_before_av_button  "><span class="hr-inner "><span class="hr-inner-style"></span></span></div>
 <div class="avia-button-wrap avia-button-left  avia-builder-el-36  el_after_av_hr  avia-builder-el-last  ven-btn ven-btn-solid ven-btn-solid-white ven-btn-l"><a href="http://vendoserve.com/contact/" class="avia-button  avia-icon_select-no avia-color-theme-color avia-size-large avia-position-left "><span class="avia_iconbox_title">Request a Quote</span></a></div></div>
 </div></div></div><!-- close content main div --> <!-- section close by builder template --></div>		</div><!--end builder template--></div><!-- close default .container_wrap element -->		

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>phone test</title>
+<style>
+    body {
+        background-color: #5F5B58;
+    }
+    #tslider {
+        margin-right: auto;
+        margin-left: auto;
+        width: 930px;
+        position: relative;
+
+        -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+    }
+    #blur {
+        position: absolute;
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+        top:55px;
+        opacity:0.4;
+        left:-238px;
+        width:600px;
+        overflow: hidden;
+    }
+    #blur img {
+        padding-left: 435px;
+    }
+    #phone {
+        position: absolute;
+        left:0;
+    }
+    #screens {
+        position: absolute;
+        left: 216px;
+        width: 218px;
+        height: 387px;
+        overflow: hidden;
+        top: 54px;
+    }
+    #tslider .holder {
+        position: relative;
+
+        -webkit-transition: margin-left 0.9s cubic-bezier(.3,.87,.24,.98);
+        -moz-transition: margin-left 0.9s cubic-bezier(.3,.87,.24,.98);
+        -o-transition: margin-left 0.9s cubic-bezier(.3,.87,.24,.98);
+        transition: margin-left 0.9s cubic-bezier(.3,.87,.24,.98);
+    }
+    #tslider .controls {
+        position: absolute;
+        top: 224px;
+        left: 52px;
+        height: 100%;
+        width: 60px;
+    }
+    #tslider .controls div {
+     margin-bottom: 16px;
+     height: 60px;
+     width: 60px;
+     position: relative;
+     z-index: 1;
+     border: 1px solid #fff;
+     border-radius: 60px;
+     outline: none;
+     cursor: pointer;
+     display: block;
+     background-color: transparent;
+     background-image: none;
+     line-height: 1;
+     color: #fff;
+ }
+ #tslider .controls div::before {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    height: 62px;
+    width: 62px;
+    z-index: -1;
+    border-radius: 62px;
+    content: '';
+    display: block;
+    background-color: #fff;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+#tslider .controls div:hover::before {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#tslider svg {
+     padding: 20px;
+    fill: #fff;
+    -webkit-transition: fill 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: fill 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+#tslider div:hover>svg {
+    fill: #5F5B58;
+}
+
+ #tslider #next {
+    /*left:448px;*/
+}
+
+#tslider #prev {
+   /* left:155px;*/
+}
+
+
+
+/******** Player **********/
+#player {
+    width:218px;
+    height: 387px;
+    background-color: green;
+    position: absolute;
+    left: 218px;
+    top:0;
+}
+#player .song {
+    width: 100%;
+    height: 25px;
+    cursor: pointer;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+    var slides=6;
+    var pos=slides-2;
+    var width=218;
+
+    var slideby = function(dir) {
+        pos += dir;
+        pos = Math.min(slides-1,Math.max(0,pos));
+        if (pos==slides-1) {
+            // pos=0;
+            // pos -= dir;
+            $("#next").css("opacity",0);
+        }
+        else if (pos==0) {
+            //pos=slides-1;
+            //pos -= dir;
+            $("#prev").css("opacity",0);
+        }
+        else {
+            $("#prev").css("opacity",1);
+            $("#next").css("opacity",1);
+        }
+            $("#tslider .holder").css("margin-left",-width*pos);
+    }
+
+    $( document ).ready(function() {
+        slideby(1);
+        $("#next").click(function(){
+            slideby(1);
+        })
+        $("#prev").click(function(){
+            slideby(-1);
+        })
+    });
+
+
+
+    // player ***************
+    var clips = new Array();
+    var player = new Audio();
+    clips[0] = "player_files/addidas.ogg";
+    clips[1] = "player_files/appletizer.ogg";
+    //TODO: preload sounds
+
+    $( document ).ready(function() {
+        $("#player .song").click(function(){
+            player.src = clips[this.id];
+            player.play();
+        });
+        $("#next, #prev").click(function(){
+            player.pause();
+        })
+    });
+
+
+</script>
+</head>
+<body>
+<br><br>
+    <div id="tslider">
+        <div id="blur" >
+            <div class="holder">
+                <img src="screens_blur.png" />
+            </div>
+        </div>
+        <img id="phone" src="iphone-white.png" />
+        <div id="screens">
+            <div class="holder">
+                <img  src="screens.png" />
+                <div id="player">
+                    <div class="song" id="0">Call Bob</div>
+                    <div class="song" id="1">Call Jane</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="controls" >
+            <div id="prev"><!--[if gte IE 9]><!-->
+              <svg width="20" height="20" class="icon-chevron-thin-right">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-chevron-thin-right"></use>
+            </svg>
+            <!--<![endif]--></div>
+            <div id="next"><!--[if gte IE 9]><!-->
+              <svg width="20" height="20" class="icon-chevron-thin-left">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-chevron-thin-left"></use>
+            </svg>
+            <!--<![endif]--></div>
+        </div>
+    </div>
+</body></html>

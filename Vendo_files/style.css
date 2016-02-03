@@ -1,0 +1,362 @@
+/*
+ Theme Name:   Vendo Serve
+ Theme URI:    http://ad-call.co.za/
+ Description:  Theme for Vendo Serve
+ Author:       Gavin Wood
+ Author URI:   http://gavinthebarbarian.com
+ Template:     enfold
+ Version:      1.0
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  enfold
+*/
+
+@import url("../enfold/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
+}
+
+.avia_textblock ul, .slide-entry-excerpt ul {
+  list-style-type: none;
+  margin: 2em 0 0;
+  padding: 0;
+}
+
+.avia_textblock ul li, .slide-entry-excerpt ul li {
+display: block;
+  position: relative;
+  padding-left: 2em;
+  line-height: 1.5em;
+  margin-bottom: .5em;
+}
+
+.avia_textblock ul li::before, .slide-entry-excerpt ul li::before{
+  content: "";
+  position: absolute;
+  top: .5em;
+  left: 0;
+  width: .4em;
+  height: .4em;
+  background: #F76A26;
+}
+
+.main_color {
+	border: none!important;
+}
+
+.blue-text {
+	color: #3AA4D8;
+}
+
+.ven-devider .hr-inner.inner-border-av-border-thin {
+	width: 270px!important;
+}
+
+.ven-small-italic {
+	font-size: .8em;
+	color: #666666;
+}
+
+/* Mobile Menu Styling
+------------------------------------------------*/
+
+#mobile-advanced {
+	background: #5F5B58;
+	border: none;
+}
+
+#mobile-advanced a {
+	color: #e3e3e3;
+	border-bottom: none;
+	border-top: none;
+	border-color: transparent;
+}
+
+.relative {
+	position: relative;
+}
+
+
+/* Banner Section
+------------------------------------------------*/
+
+
+.home-banner-text h1 {
+
+	text-transform: none!important;
+	font-size: 3rem!important;
+}
+
+.v-bold {
+	font-weight: bold;
+}
+
+.text-orange {
+	color: #FE8C25;
+}
+
+
+.v-page-header  h1{
+	color: white;
+}
+
+
+/* Home Page 
+-----------------------------------------------*/
+
+
+/* ---- Orange Section ----*/
+
+.v-orange-section {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f45b27+0,fe9823+100 */
+	background: #f45b27; /* Old browsers */
+	background: -moz-linear-gradient(left,  #f45b27 0%, #fe9823 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f45b27), color-stop(100%,#fe9823)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #f45b27 0%,#fe9823 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #f45b27 0%,#fe9823 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #f45b27 0%,#fe9823 100%); /* IE10+ */
+	background: linear-gradient(to right,  #f45b27 0%,#fe9823 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f45b27', endColorstr='#fe9823',GradientType=1 ); /* IE6-9 */
+
+}
+
+.v-orange-section .av-section-color-overlay {
+	background-repeat:no-repeat!important;
+	background-position: bottom right;
+}
+
+
+/* ---- BUTTONS ---- */
+
+
+/*-- Global Button Class --*/
+
+.ven-btn a, .ven-contact input[type="submit"] {
+
+	border-radius: 50px!important;
+	padding: 1em 3em!important;
+	 margin-top: 2em!important;
+	   -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  	-webkit-transition:all .4s ease-in-out;
+  	   -moz-transition:all .4s ease-in-out;
+  	        transition:all .4s ease-in-out;
+}
+
+.ven-btn a:hover, .ven-contact input[type="submit"]:hover {
+	box-shadow: 0 5px 12px rgba(0,0,0,.4);
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+}
+
+/* Solid Button*/
+
+.ven-btn-solid a{
+  border: none!important;
+}
+
+.ven-btn-solid-white a {
+	background: #ffffff!important;
+	color: #F76A26!important;
+}
+
+.ven-btn-solid-white a:hover {
+	background: #53C5C2!important; 
+	color: #ffffff!important;
+}
+
+.ven-btn-solid-orange a {
+	background: #F76A26!important;
+	color: #ffffff!important;
+	
+}
+
+/* Button Sizes */
+
+.ven-btn-l a {
+	font-size: 21px!important;
+}
+
+/* Outline Button */
+
+.ven-btn-outline a {
+	margin-top: 2em!important;
+	border: 1px solid #F76A26!important;
+  	color: #F76A26!important;
+  	background: transparent!important;
+}
+
+.ven-btn-outline a:hover {
+	background: #53C5C2!important;
+	color: #ffffff!important;
+	border-color: #53C5C2!important;
+}
+
+
+
+/* ---- HEADINGS ---- */
+
+.ven-heading h2{
+	margin-left: 68px!important;
+}
+
+.ven-heading h2:before{
+
+    background-size: 60px 60px;
+    width: 60px; 
+    height: 60px;
+    content:"";
+    display: inline-block;
+    position: absolute;
+    top: -12px;
+    left: 0;
+}
+
+.ven-heading-book    h2:before { background-image: url('http://vendoserve.com/wp-content/uploads/2015/10/book-120.png'); }
+.ven-heading-serve   h2:before { background-image: url('http://vendoserve.com/wp-content/uploads/2015/10/serve-120.png'); }
+.ven-heading-monitor h2:before { background-image: url('http://vendoserve.com/wp-content/uploads/2015/10/monitor-120.png'); }
+
+/***************************************************************
+	MEDIA QUERIES
+***************************************************************/
+
+
+
+@media only screen and (min-width: 768px){
+
+
+
+.ven-devider .hr-inner.inner-border-av-border-thin {
+	width: 670px!important;
+}
+
+/* Header Section - Desktop
+------------------------------------------------*/
+
+
+.header_color .header_bg {
+	opacity: 1 !important;
+}
+
+#top .av_header_transparency #header_main {
+	box-shadow: none;
+}
+
+#top #header_main {
+	box-shadow: 0 3px 5px rgba(0,0,0,.4);
+}
+
+
+/* Main Menu
+------------------------------------------------*/
+
+.main_menu a {
+	text-transform: uppercase;
+	font-size: 14px!important;
+}
+
+
+/* HOME PAGE
+-----------------------------------------------*/
+
+.home-banner-text h1 {
+
+	text-transform: none!important;
+	font-size: 4rem!important;
+}
+
+.zero-padding-bottom .content{
+	padding-bottom: 0!important;
+}
+
+.rotator-text {
+	font-size: 21px;
+}
+
+.rotator-text .avia-smallarrow-slider-heading {
+	display: none!important;
+}
+
+.ven-bookings-carousel{
+  box-shadow: 0px 0px 18px rgba(0,0,0,.2);
+  padding: 2em;
+}
+
+.ven-bookings-carousel .entry-title .ven-steps {
+	color: #F76A26!important;
+}
+
+
+
+/* API PAGE
+-----------------------------------------------*/
+
+.api-box {
+	height: 380px!important; 
+}
+
+.align-bottom {
+	position: absolute;
+	bottom: 0;
+}
+
+/* how it works*/
+
+.booking-screen-wrapper {
+  border-radius: 0px;
+  position: absolute!important;
+  bottom: 0!important;
+  right: 0!important;
+}
+
+.booking-img img {
+
+  position: absolute;
+bottom: 0;
+  right: -700px;
+  width: 100%;
+  min-width: 950px;
+}
+
+.reporting-img img {
+
+  position: absolute;
+top: 0;
+  right: -700px;
+  width: 100%;
+  min-width: 950px;
+}
+
+}
+
+@media only screen and (min-width: 992px) {
+
+
+
+
+.ven-devider .hr-inner.inner-border-av-border-thin {
+	width: 870px!important;
+}
+
+
+}
+
+
+@media only screen and (min-width: 1850px) {
+
+.home-banner-text h1 {
+
+	text-transform: none!important;
+	font-size: 6rem!important;
+}
+}
+
+
+
+
+

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0022)http://vendoserve.com/ -->
-<html lang="en-US" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en-US" class=" html_stretched responsive av-preloader-disabled av-default-lightbox  html_header_top html_logo_left html_main_nav_header html_menu_right html_slim html_header_sticky html_header_shrinking_disabled html_header_transparency html_mobile_menu_tablet html_disabled html_header_searchicon_disabled html_content_align_center html_header_unstick_top_disabled html_header_stretch html_entry_id_10 "><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
 
 <!-- page title, displayed in your browser bar -->
@@ -150,6 +150,10 @@ url('http://vendoserve.com/wp-content/themes/enfold/config-templatebuilder/avia-
 particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
   console.log('callback - particles.js config loaded');
 });
+
+particlesJS.load('tslider', 'particlesjs-config.json', function() {
+  console.log('callback - particles.js config loaded');
+});
 </script>
 
 <!-- TIMOSOLO: phone slider -->
@@ -197,6 +201,7 @@ particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
     #phone {
         position: absolute;
         left:0;
+        z-index:8;
     }
     #screens {
         position: absolute;
@@ -205,6 +210,7 @@ particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
         height: 387px;
         overflow: hidden;
         top: 54px;
+        z-index:9;
     }
     #tslider .holder {
         position: relative;
@@ -220,6 +226,7 @@ particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
         left: 52px;
         height: 100%;
         width: 60px;
+        z-index:10;
     }
     #tslider .controls div {
      margin-bottom: 16px;
@@ -306,6 +313,11 @@ particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
     position: absolute;
     left: 218px;
     top:0;
+}
+#player p {
+    padding: 10px;
+    font-style: italic;
+    text-align: center;
 }
 
 #player #playlist {
@@ -403,6 +415,8 @@ particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
     var player = new Audio();
     clips[0] = new Audio("player_files/addidas.ogg");
     clips[1] = new Audio("player_files/appletizer.ogg");
+    clips[2] = new Audio("player_files/berlingo.ogg");
+    clips[3] = new Audio("player_files/listerene.ogg");
     //TODO: preload sounds
 
     $( document ).ready(function() {
@@ -510,6 +524,11 @@ particlesJS.load('av_section_1', 'particlesjs-config.json', function() {
                         <a class="song" id="1"><img src="av1.png" class="avatar"> Bob Marley</a>
                         <a class="song" id="2"><img src="av2.png" class="avatar"> Jane Doe</a>
                         <a class="song" id="3"><img src="av3.png" class="avatar"> Timothy </a>
+                        <a class="song" id="4"><img src="av4.png" class="avatar"> James </a>
+                        <p>
+                        <br><br>
+                        Click on a name to hear the Ad ringtone.
+                        </p>
                     </div>
                     <div id="calling">
                         <div><img src="av1.png" class="avatar"> Calling <span class="name">Bob</span></div>

@@ -222,13 +222,15 @@ particlesJS.load('tslider', 'particlesjs-config.json', function() {
     }
     #tslider .controls {
         position: absolute;
-        top: 224px;
-        left: 52px;
+        top: 53px;
+        left: 494px;
+        /*top: 224px;
+        left: 52px;*/
         height: 100%;
-        width: 60px;
         z-index:10;
     }
     #tslider .controls div {
+     display: inline-block;
      margin-bottom: 16px;
      height: 60px;
      width: 60px;
@@ -238,7 +240,6 @@ particlesJS.load('tslider', 'particlesjs-config.json', function() {
      border-radius: 60px;
      outline: none;
      cursor: pointer;
-     display: block;
      background-color: transparent;
      background-image: none;
      line-height: 1;
@@ -274,7 +275,7 @@ particlesJS.load('tslider', 'particlesjs-config.json', function() {
     -webkit-transition: fill 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     transition: fill 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
-#tslider div:hover>svg {
+#tslider .controls div:hover>svg {
     fill: #5F5B58;
 }
 
@@ -336,6 +337,7 @@ particlesJS.load('tslider', 'particlesjs-config.json', function() {
 #player .song:hover {
     background-color: rgba(254,254,254,0.3);
     text-decoration: none;
+    cursor: pointer;
 }
 #player .avatar {
     width: 20px;
@@ -359,7 +361,7 @@ particlesJS.load('tslider', 'particlesjs-config.json', function() {
     padding: 10px;
     color: rgba(254,254,254,0.8);
 }
-#player #calling .avatar{
+#player #calling .avatar {
     width: 40px;
     height: 40px;
 }
@@ -367,6 +369,87 @@ particlesJS.load('tslider', 'particlesjs-config.json', function() {
     opacity: 1;
     bottom: 0;
 }
+
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  60% {
+    -moz-transform: translateY(15px);
+    transform: translateY(15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  60% {
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  60% {
+    -moz-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+  }
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -60px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@media screen and (max-width: 950px) {
+    #tslider {
+        left: -236px;
+    }
+    #blur {
+        display:none;
+    }
+    #tslider .controls {
+    }
+    #tslider .controls>div {
+    }
+}
+
+
 
 </style>
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -522,11 +605,16 @@ particlesJS.load('tslider', 'particlesjs-config.json', function() {
                 <div id="player">
                     <div id="playlist">
                         <a class="song" id="1"><img src="av1.png" class="avatar"> Bob Marley</a>
-                        <a class="song" id="2"><img src="av2.png" class="avatar"> Jane Doe</a>
+                        <div class="song" id="2"><img src="av2.png" class="avatar"> Jane Doe</div>
                         <a class="song" id="3"><img src="av3.png" class="avatar"> Timothy </a>
                         <a class="song" id="4"><img src="av4.png" class="avatar"> James </a>
                         <p>
-                        <br><br>
+                        <div class="arrow bounce"><!--[if gte IE 9]><!-->
+              <svg width="20" height="20" class="icon-caret-up">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-caret-up"></use>
+            </svg>
+            <!--<![endif]--></div>
+                        <p>
                         Click on a name to hear the Ad ringtone.
                         </p>
                     </div>
@@ -539,14 +627,14 @@ particlesJS.load('tslider', 'particlesjs-config.json', function() {
 
 
         <div class="controls" >
-            <div id="prev"><!--[if gte IE 9]><!-->
-              <svg width="20" height="20" class="icon-chevron-thin-right">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-chevron-thin-right"></use>
-            </svg>
-            <!--<![endif]--></div>
             <div id="next"><!--[if gte IE 9]><!-->
               <svg width="20" height="20" class="icon-chevron-thin-left">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-chevron-thin-left"></use>
+            </svg>
+            <!--<![endif]--></div>
+            <div id="prev"><!--[if gte IE 9]><!-->
+              <svg width="20" height="20" class="icon-chevron-thin-right">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-chevron-thin-right"></use>
             </svg>
             <!--<![endif]--></div>
         </div>

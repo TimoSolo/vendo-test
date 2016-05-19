@@ -1,3 +1,6 @@
+
+
+
 /*
 Theme Name: Bent
 Author: Allie
@@ -129,11 +132,13 @@ p {
         padding-top: 45px;
     }
 }
+/*
 @media (max-width: 768px) {
     .navbar-brand img {} .navbar-default {
         background-color: #fff !important;
     }
 }
+*/
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
@@ -305,14 +310,6 @@ tuor:visited {
 }
 .single_about_area:hover div i {
     color: #FE8C25;
-}
-.about_phone img {    
-    position: absolute;
-    right: 0;
-} @media (max-width: 991px)  {
-    .about_phone img {
-        position: static;
-    }
 }
 /*---------------------------------------
    SECTION VIDEO              
@@ -1075,4 +1072,61 @@ select:-webkit-autofill {
         transform: scale(1.0);
         -webkit-transform: scale(1.0);
     }
+}
+
+
+
+
+
+
+
+/****** TIMOSOLO ******/
+.inner_about_desc ul {
+    margin-left: 50px;
+    font-size: 19px;
+    line-height: 24px;
+}
+.inner_about_desc li {
+    color: #333;
+    padding: 7px;
+    list-style: none;
+}
+.inner_about_desc li:before {
+  /* For a round bullet */
+  content: '\2022';
+  /* For a square bullet */
+  /*content:'\25A0';*/
+  display: block;
+  position: relative;
+  max-width: 0;
+  max-height: 0;
+  left: -25px;
+  top: 0;
+  color: #fe8c25;
+  font-size: 50px;
+}
+
+
+.about_phone img {    
+    position: absolute;
+    right: 0;
+} 
+@media (max-width: 991px)  {
+    .about_phone img {
+        position: static;
+    }
+}
+
+h1 b {
+    color:#FE8C25;
+}
+h2 b {
+    color:#FE8C25;
+}
+
+.bigicon {
+    color:#FE8C25;
+    font-size: 50px;
+    float: left;
+    margin-right: 20px;
 }

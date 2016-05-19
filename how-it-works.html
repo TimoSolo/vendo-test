@@ -46,450 +46,6 @@
 
 
 
-    <!-- TIMOSOLO: phone slider -->
-<style>
-    #tslider {
-        margin-right: auto;
-        margin-left: auto;
-        width: 930px;
-        height: 600px;
-        position: relative;
-        clear: both;
-
-
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none;   /* Chrome/Safari/Opera */
-      -khtml-user-select: none;    /* Konqueror */
-      -moz-user-select: none;      /* Firefox */
-      -ms-user-select: none;       /* IE/Edge */
-      user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
-    }
-    /* reset styles from the web theme */
-    #tslider img {
-        max-width: initial; 
-    }
-    #tslider * {
-        -webkit-box-sizing: initial;
-        box-sizing: initial;
-    }
-
-    #bg-screens {
-        position: absolute; 
-        top: 70px;
-        -webkit-filter: blur(5px);
-        filter: blur(5px);
-        opacity:0.4;
-        left: -234px;
-        width: 600px;
-        overflow: hidden;
-    }
-    #blur {
-        position: relative; 
-        width: 2000px;
-        left: -220px;
-    }
-    #blur .holder{
-        display: inline-block;
-        margin: 10px;
-        width: 195px; /*218px * ratio below */
-        height: 347px; /* 387 - 40 */
-        overflow: hidden;
-    }
-    #blur .holder img {
-        height: 347px;
-    }
-    .p0 {
-        margin-left: 0; 
-    }
-    .p1 {
-        margin-left: -195.5px; 
-    }
-    .p2 {
-        margin-left: -391px; 
-    }
-    .p3 {
-        margin-left: -586.4px; 
-    }
-    .p4 {
-        margin-left: -782px; 
-    }
-    .p5 {
-        margin-left: -977.3px; 
-    }
-
-    #phone {
-        position: absolute;
-        left:0;
-        z-index:8;
-    }
-    #screens {
-        position: absolute;
-        left: 216px;
-        width: 218px;
-        height: 387px;
-        overflow: hidden;
-        top: 54px;
-        z-index:9;
-    }
-    #screens .holder {
-        position: relative;
-        width: 5000px;
-    }
-    #screens .holder>img {
-        float: left;
-    }
-    #tslider .animate {
-        -webkit-transition: all 0.9s cubic-bezier(.3,.87,.24,.98);
-        -moz-transition: all 0.9s cubic-bezier(.3,.87,.24,.98);
-        -o-transition: all 0.9s cubic-bezier(.3,.87,.24,.98);
-        transition: all 0.9s cubic-bezier(.3,.87,.24,.98);
-    }
-    #tslider .controls {
-        position: absolute;
-        top: 53px;
-        left: 494px;
-        /*top: 224px;
-        left: 52px;*/
-        height: 100%;
-        z-index:10;
-    }
-    #tslider .controls div {
-     display: inline-block;
-     margin-bottom: 16px;
-     height: 60px;
-     width: 60px;
-     position: relative;
-     z-index: 1;
-     border: 1px solid #fe8c25;
-     border-radius: 60px;
-     outline: none;
-     cursor: pointer;
-     background-color: transparent;
-     background-image: none;
-     line-height: 1;
-     color: #fe8c25;
- }
- #tslider .controls div::before {
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    height: 62px;
-    width: 62px;
-    z-index: -1;
-    border-radius: 62px;
-    content: '';
-    display: block;
-    background-color: #fe8c25;
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
-    transform: scale(0);
-    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    cursor: pointer;
-}
-#tslider .controls div:hover::before {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-}
-#tslider svg {
-     padding: 20px;
-    fill: #fe8c25;
-    -webkit-transition: fill 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: fill 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    cursor: pointer;
-}
-#tslider .controls div:hover>svg {
-    fill: #fff;
-    cursor: pointer;
-}
-
- #tslider #next {
-    /*left:448px;*/
-    cursor: pointer;
-}
-
-#tslider #prev {
-   /* left:155px;*/
-    cursor: pointer;
-}
-
-/******* content *******/
-#tslider .content {
-    position: absolute;
-    left: 500px;
-    width: 400px;
-        margin-top: 111px;
-}
-#tslider .content>div {
-    position: absolute;
-    opacity: 0;
-    margin-top: -10px;
-    -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-#tslider .content>div.active {
-    opacity: 1;
-    margin-top: 0px;
-}
-
-
-/******** Player **********/
-#player {
-    width:218px;
-    height: 387px;
-    position: absolute;
-    left: 654px;
-    top:0;
-}
-#player p {
-    padding: 40px;
-    font-style: italic;
-    text-align: center;
-
-}
-
-#player #playlist {
-    padding-top: 30px;
-}
-
-#player .song {
-    display: block;
-    color: gray;
-    padding-left: 10px;
-    height: 35px;
-    line-height: 35px;
-    cursor: pointer;
-    border-bottom: 1px solid #ddd;
-}
-#player .song:hover {
-    background-color: rgba(254,254,254,0.3);
-    text-decoration: none;
-    cursor: pointer;
-}
-#player .avatar {
-    width: 20px;
-    height: 20px;
-    border-radius: 100px;
-    vertical-align: middle;
-}
-#player #calling {
-    position: absolute;
-    width:218px;
-    height: 387px;
-    opacity: 0;
-    bottom: -390px;
-    background:url(calling.jpg);
-    background-size: 218px 387px;
-    -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-}
-#player #calling>div {
-    margin-top: 40px;
-    padding: 10px;
-    color: rgba(254,254,254,0.8);
-}
-#player #calling .avatar {
-    width: 40px;
-    height: 40px;
-}
-#player #calling.active {
-    opacity: 1;
-    bottom: 0;
-}
-
-
-@-moz-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(30px);
-    transform: translateY(30px);
-  }
-  60% {
-    -moz-transform: translateY(15px);
-    transform: translateY(15px);
-  }
-}
-@-webkit-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(30px);
-    transform: translateY(30px);
-  }
-  60% {
-    -webkit-transform: translateY(15px);
-    transform: translateY(15px);
-  }
-}
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(30px);
-    -ms-transform: translateY(30px);
-    -webkit-transform: translateY(30px);
-    transform: translateY(30px);
-  }
-  60% {
-    -moz-transform: translateY(15px);
-    -ms-transform: translateY(15px);
-    -webkit-transform: translateY(15px);
-    transform: translateY(15px);
-  }
-}
-
-.arrow {
-  position: absolute;
-  left: 50%;
-  margin-left: -30px;
-  margin-top: -24px;
-  width: 40px;
-  height: 40px;
-  opacity: 0.7;
-}
-
-.bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
-}
-
-@media screen and (max-width: 950px) {
-    #tslider {
-        left: -236px;
-    }
-    #blur {
-        display:none;
-    }
-}
-@media screen and (max-width: 690px) {
-    #tslider {
-        position: initial;
-        width: 100%;
-    }
-    #tslider .controls {
-        left: 0;
-        padding-left: 15px;
-    }
-    #tslider .content {
-        left: 0;
-        width: 90%;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    #blur {
-        display:none;
-    }
-    #phone {
-        display:none;
-    }
-    #screens {
-        display:none;
-    }
-}
-
-
-
-</style>
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script type="text/javascript">
-    var slides=4;
-    var pos=3; // 0 based
-    var width=218;
-    var moving=false;
-
-    var slideby = function(dir) {
-        if (moving) return; // ignore if in-motion
-        moving=true;
-        // remove active class on the content sliders
-        $("#tslider .content>div").removeClass("active");
-        pos += dir;
-        
-        if (pos>=slides) {
-            pos=0;
-        }
-        else if (pos<0) {
-            pos=slides-1;
-            $("#tslider #screens .holder").removeClass("animate").css("margin-left",-width*slides);
-        }
-        // set one slide to active
-        $("#tslider .content>div:eq("+pos+")").addClass("active");
-
-        // slide the main screen:
-        window.setTimeout(function() {
-            $("#tslider #screens .holder").addClass("animate").css("margin-left",
-                parseInt($("#tslider #screens .holder").css("margin-left"))-width*dir);
-            //animate the bg screen, then undo
-            $("#tslider #blur").addClass("animate").css("margin-left",-width*dir);
-        }, 10);
-        
-
-        window.setTimeout(function() {
-            $("#tslider #blur").removeClass("animate").css("margin-left",0);
-            for (var i = 3; i >= 0; i--) {
-                $("#tslider #blur img:eq("+i+")").attr("class","p"+((slides+pos+(i-3))%slides));
-            };
-            $("#tslider #screens .holder").removeClass("animate").css("margin-left",-width*pos);
-            moving=false;
-        }, 1020);
-
-    }
-
-    $( document ).ready(function() {
-        slideby(1);
-        $("#next").click(function(){
-            slideby(1);
-        })
-        $("#prev").click(function(){
-            slideby(-1);
-        })
-    });
-
-
-
-    // player ***************
-    var clips = new Array();
-    var player = new Audio();
-    clips[0] = new Audio("player_files/addidas.ogg");
-    clips[1] = new Audio("player_files/appletizer.ogg");
-    clips[2] = new Audio("player_files/berlingo.ogg");
-    clips[3] = new Audio("player_files/listerene.ogg");
-    //TODO: preload sounds
-
-    $( document ).ready(function() {
-        $("#player .song").click(function(){
-            player.src = clips[this.id-1].src;
-            player.play();
-            $("#calling .name").html(this.innerText);
-            $("#calling .avatar").prop("src","av"+this.id+".png");
-            $("#calling").addClass("active");
-        });
-        $("#next, #prev, #calling").click(function(){
-            player.pause();
-            $("#calling").removeClass("active");
-        })
-    });
-
-
-</script>
-
-<!-- / TIMOSOLO -->
-
 </head>
 
 <body>
@@ -528,8 +84,8 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <!-- NAV -->
-                            <li><a href="#HOME">HOME</a> </li>
-                            <li><a href="#SCREENS">HOW IT WORKS</a> </li>
+                            <li><a href="index.html#HOME">HOME</a> </li>
+                            <li><a href="#HOW">HOW IT WORKS</a> </li>
                             <li><a href="#DOWNLOAD">DEVELOPERS </a> </li>
                             <li><a href="#CONTACT">CONTACT </a> </li>
                         </ul>
@@ -539,36 +95,14 @@
                 <!-- /.container- -->
             </nav>
 
-            <div class="container home-container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="logo home_text">
-                                <!-- LOGO -->
-                            <img src="images/logo.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-sm-8">
-                        <div class="home_text">
-                            <!-- TITLE AND DESC -->
-                            <h1>The <b style="color:#FE8C25">Mobile Ad</b> Serving Infrastructure of choice</h1>
-                            
 
-                            <div class="download-btn">
-                            <p>Who uses VENDO:</p>
-                            <!-- BUTTON -->
-                                <a class="btn home-btn wow fadeInLeft" href="#PUBLISHERS"> Publishers </a>&nbsp;&nbsp;<a class="btn home-btn wow fadeInLeft" href="#ADVERTISERS"> Advertisers </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-md-offset-1 col-sm-4">
-                        <!-- <div class="home-iphone">
-                            <img src="images/iPhone_Home.png" alt="">
-                        </div> -->
-                    </div>
-                </div>
-            </div>
+
+            <!-- <div class="container home-container">
+               asdf
+            </div> -->
+
+
+
         </div>
     </section>
 
@@ -582,56 +116,41 @@
 ============================== -->
 
 
-    <section class="about page" id="PUBLISHERS">
+    <section class="about page" id="HOW">
         <div class="inner_about_area">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="about_phone wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
-                        <!-- PHONE -->
-                            <img src="images/about_iphone.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                    <div class="col-md-6  wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
                         <!-- TITLE -->
                         <div class="inner_about_title">
-                            <h2>Publishers</h2>
-                            <p>Publishers simply plug into Vendo and make their ad inventory available on the Vendo platform, giving them a competitive advantage to serve ads in various different formats to the consumer.</p>
+                            <h2> <b>Manage</b> Ad Campaigns</h2>
+                            <p><i class="pe-7s-display2 bigicon"></i> Book ads using a simple and easy-to-use campaign management interface:</p>
                         </div>
                         <div class="inner_about_desc">
-
-                            <!-- SINGLE DESC -->
-                            <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="1s">
-                                <!-- ICON -->
-                                <div><i class="pe-7s-piggy"></i></div>
-                                <!-- HEADING DESCRIPTION -->
-                                <h3>Monetize Existing Inventory</h3>
-                                <p>Use Vendo to broaden your exposure to existing assets and increase revenue.</p>
-                            </div>
-                            <!-- END SINGLE DESC -->
-
-
-                            <!-- SINGLE DESC -->
-                            <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="1.5s">
-                                <!-- ICON -->
-                                <div><i class="pe-7s-timer"></i></div>
-                                <!-- HEADING DESCRIPTION -->
-                                <h3>Quick &amp; Easy Integration</h3>
-                                <p>Our hassle-free RESTful API makes it easy to integrate into your existing system architecture.</p>
-                            </div>
-                            <!-- END SINGLE DESC -->
-
-
-                            <!-- SINGLE DESC -->
-                            <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="2s">
-                                <!-- ICON -->
-                                <div><i class="pe-7s-graph1"></i></div>
-                                <!-- HEADING DESCRIPTION -->
-                                <h3>Advanced Reporting</h3>
-                                <p>Our interactive reports allow you greater insight into the minds of your users.</p>
-                            </div>
-                            <!-- END SINGLE DESC -->
-
+                            <ul>
+                                <li>
+                                    Advanced scheduling tools
+                                </li>
+                                <li>
+                                    Flexible targeting parameters
+                                </li>
+                                <li>
+                                    Target multiple channels and publishers
+                                </li>
+                                <li>
+                                    Manage ad creatives
+                                </li>
+                                <li>
+                                    Manage multiple flights per campaign
+                                </li>
+                            </ul>
+                            <br><br>&nbsp;
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about_manage " data-wow-duration="1s" data-wow-delay=".5s">
+                        <!-- PHONE -->
+                            <img src="images/manage.png" alt="" style="" />
                         </div>
                     </div>
                 </div>
@@ -708,101 +227,6 @@
     </section>
 
     <!-- END FUN FACTS -->
-
-
-
-
-    <section class="about page" id="EXAMPLES">
-        <div class="inner_about_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-
-
-<div id="tslider">
-    <div id="bg-screens" class="fadeInLeft" >
-        <div id="blur" >
-            <div class="holder"><img class="p3"  src="screens.jpg" /></div>
-            <div class="holder"><img class="p4"  src="screens.jpg" /></div>
-            <div class="holder"><img class="p5"  src="screens.jpg" /></div>
-            <div class="holder"><img class="p0"  src="screens.jpg" /></div>
-        </div>
-    </div>
-
-    <img id="phone" src="iphone-white.png" />
-    <div id="screens">
-        <div class="holder">
-            <img  src="screens.jpg" />
-            <img  src="screens.jpg" />
-            <div id="player">
-                <div id="playlist">
-                    <a class="song" id="1"><img src="av1.png" class="avatar"> Bob Marley</a>
-                    <a class="song" id="2"><img src="av2.png" class="avatar"> Jane Doe</a>
-                    <a class="song" id="3"><img src="av3.png" class="avatar"> Timothy </a>
-                    <a class="song" id="4"><img src="av4.png" class="avatar"> James </a>
-                    <div class="arrow bounce">
-                        <!--[if gte IE 9]><!-->
-                          <svg width="20" height="20" class="icon-caret-up">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-caret-up"></use>
-                          </svg>
-                        <!--<![endif]-->
-                    </div>
-                    <p>
-                        Click on a name to hear the Ad ringtone.
-                    </p>
-                </div>
-                <div id="calling">
-                    <div><img src="av1.png" class="avatar"> Calling <span class="name">Bob</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="controls fadeInRight" >
-        <div id="prev"><!--[if gte IE 9]><!-->
-          <svg width="20" height="20" class="icon-chevron-thin-left">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-chevron-thin-left"></use>
-        </svg>
-        <!--<![endif]--></div>
-        <div id="next"><!--[if gte IE 9]><!-->
-          <svg width="20" height="20" class="icon-chevron-thin-right">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="spritesheet.svg#icon-chevron-thin-right"></use>
-        </svg>
-        <!--<![endif]--></div>
-    </div>
-
-    <div class="content inner_about_title fadeInRight">
-        <div class="0">
-            <h2>Text Ads</h2>
-            <p>Port, logistically transmission patch audio frequency messaging, distributed analog log technician. Supporting kilohertz transponder arrray software phase development feedback phase infrared capacitance network. </p>
-        </div>
-        <div class="1">
-            <h2>Instant Messaging</h2>
-            <p>
-                Led data in digital digital, integer broadband reducer, with disk gigabyte. Bridgeware, bypass, transponder broadband software high sampling bypass disk developer, kilohertz mainframe floating-point. Floating-point logarithmic silicon potentiometer procedural mainframe reflective integral. Software includes bus prototype connectivity network element infrared infrared. 
-            </p>
-        </div>
-        <div class="2">
-            <h2>USSD</h2>
-            <p>Pc video inversion, frequency anomoly feedback ethernet normalizing. Processor prompt controller cache procedural fragmentation silicon record audio read-only, normalizing transponder high. Video, or, cache broadband extended phaselock harmonic debugged, broadband mainframe arrray feedback device procedural log. Read-only remote, transponder, gigabyte, controller integer. </p>
-        </div>
-        <div class="3">
-            <h2>AdRBT</h2>
-            <p>
-                Plasma logistically system services transponder partitioned supporting kilohertz, system, floating-point fragmentation analog. Phase, sampling device arrray, generator transmission fragmentation interface generator sampling analog bypass encapsulated normalizing. Supporting arrray supporting network phaselock adaptive supporting.
-            </p>
-        </div>
-    </div>
-</div>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
 
 
  <!-- =========================

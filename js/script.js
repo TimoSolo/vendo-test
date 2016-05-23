@@ -114,7 +114,7 @@ $(function() {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top - 50 // 50 for navbar
         }, 1000);
         return false;
       }
@@ -331,8 +331,8 @@ $(document).ready(function() {
     });
     //COUNTER
     $('.counter_num').counterUp({
-        delay: 10,
-        time: 2000
+        delay: 5,
+        time: 1000
     });
 });
 

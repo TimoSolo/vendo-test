@@ -482,8 +482,24 @@
         $("#next, #prev, #calling").click(function(){
             player.pause();
             $("#calling").removeClass("active");
-        })
+        });
+        var rand = Math.random();
+        //alert(rand);
+        if (rand>0.5) {
+            $(".header").addClass("african")
+        }
+
     });
+
+    // $.ajax({
+    //      url: 'http://freegeoip.net/json/',
+    //      type: 'POST',
+    //      dataType: 'jsonp',
+    //      success: function(location) {
+    //         alert("You are from "+location["country_name"]);
+    //         $(".header").addClass("african")
+    //      }
+    //  });
 
 
 </script>
@@ -529,8 +545,8 @@
                         <ul class="nav navbar-nav navbar-right">
                             <!-- NAV -->
                             <li><a href="#HOME">HOME</a> </li>
-                            <li><a href="how-it-works.html">HOW IT WORKS</a> </li>
-                            <li><a href="#DOWNLOAD">DEVELOPERS </a> </li>
+                            <li><a href="#HOW">HOW IT WORKS</a> </li>
+                            <li><a href="#DEVELOPERS">DEVELOPERS </a> </li>
                             <li><a href="#CONTACT">CONTACT </a> </li>
                         </ul>
                     </div>
@@ -805,7 +821,211 @@
 </section>
 
 
+<section class="about page" id="HOW">
+        <div class="video_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6  wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                        <!-- TITLE -->
+                        <div class="inner_about_title">
+                            <h2> <b>Manage</b> Ad Campaigns</h2>
+                            <p><i class="pe-7s-display2 bigicon"></i> Book ads using a simple and easy-to-use campaign management interface:</p>
+                        </div>
+                        <div class="inner_about_desc">
+                            <ul class="biglist">
+                                <li>
+                                    Advanced scheduling tools
+                                </li>
+                                <li>
+                                    Flexible targeting parameters
+                                </li>
+                                <li>
+                                    Target multiple channels and publishers
+                                </li>
+                                <li>
+                                    Manage ad creatives
+                                </li>
+                                <li>
+                                    Manage multiple flights per campaign
+                                </li>
+                            </ul>
+                            <br><br>&nbsp;
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about_manage fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                        <!-- PHONE -->
+                            <img src="images/manage.png" alt="" style="padding-top:30px" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="inner_about_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 wow fadeInLeft">
+                          <img src="images/serve.png" alt="" align="right" />
+                    </div>
+                    <div class="col-md-6 wow fadeInRight">
+                    <!-- VIDEO LEFT TITLE -->
+                    <div class="video_title">
+                        <h2><b>Serve</b> Ads</h2>
+                        <p><i class="pe-7s-network bigicon"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+                        <div class="inner_about_desc">
+                            <ul class="biglist">
+                                <li>
+                                    Cloud-based ad server or On-premise, dedicated ad server 
+                                </li><li>
+                                Targeting parameters include:
+                                    <ul><li>
+                                        user demographics
+                                    </li><li>
+                                    keywords
+                                    </li><li>
+                                        ad types
+                                    </li></ul>
+                                </li>
+                                <li>
+                                    Log and track events on ads including impressions, clicks and call-to-actions.
+                                </li>
+                            </ul>
+                        </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="video_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6  wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                        <!-- TITLE -->
+                        <div class="inner_about_title">
+                            <h2> <b>Monitor</b> Ad Campaigns</h2>
+                            <p><i class="pe-7s-graph2 bigicon"></i>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                        </div>
+                        <div class="inner_about_desc">
+                            <ul class="biglist">
+                                <li>
+                                    Real-time campaign metrics
+                                </li><li>
+                                Gain insights in terms of:
+                                    <ul><li>
+                                        reach
+                                    </li><li>
+                                    demographics
+                                    </li><li>
+                                        location
+                                    </li><li>
+                                        engagement rates
+                                    </li></ul>
+                                </li>
+                                <li>
+                                    A complete reporting API to integrate campaign metrics into custom dashboards
+                                </li>
+                            </ul>
+                            <br><br>&nbsp;
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about_manage fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                        <!-- PHONE -->
+                            <img src="images/monitor.png" alt="" style="padding-top:30px" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<!-- =========================
+     START DEVELOPERS SECTION
+============================== -->
+
+    <section id="DEVELOPERS" class="subscribe parallax subscribe-parallax" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+        <div class="section_overlay">
+            <div class="container">
+                <div class="row wow fadeInBottom section_title">
+                    <div class="col-md-12">
+                            <h2><b>Developers</b> API and Integration</h2>
+                            
+                    </div>
+                    <div class="col-md-6 col-md-offset-3">
+                    <p>Vendo offers simple RESTful APIs for Publishers (MNOs) and Advertisers to integrate into Vendo including:</p>
+                                <ul class="biglist">
+                                    <li>
+                                        Ad serving API
+                                    </li>
+                                    <li>
+                                        Publisher users API
+                                    </li>
+                                    <li>
+                                        Reporting API
+                                    </li>
+                                </ul>
+                                <a class="btn home-btn wow fadeInLeft" href="#"> Full Documentation </a>
+                                <br><br>&nbsp;
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- END DEVELOPERS SECTION -->
+
+<!-- =========================
+     START CONTCT FORM AREA
+============================== -->
+    <section class="contact page" id="CONTACT">
+        <div class="section_overlay">
+            <div class="container">
+                <div class="col-md-8 col-md-offset-2 wow bounceIn">
+                    <!-- Start Contact Section Title-->
+                    <div class="section_title">
+                        <h2>Get in touch</h2>
+                        <p>We're here to help you with all your Ad Server needs! Phone us on <b>+27 123456789</b> or complete the form below and we will get back to you as soon as possible.</p>
+                    </div>
+                    <!-- START ERROR AND SUCCESS MESSAGE -->
+                    <div class="form_error text-center">
+                        <div class="name_error hide error">Please Enter your name</div>
+                        <div class="email_error hide error">Please Enter your Email</div>
+                        <div class="email_val_error hide error">Please Enter a Valid Email Address</div>
+                        <div class="message_error hide error">Please Enter Your Message</div>
+                    </div>
+                    <div class="Sucess"></div>
+                <!-- END ERROR AND SUCCESS MESSAGE -->
+
+                <!-- FORM -->    
+                    <form role="form" class="contact_form wow bounceIn">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            </div>
+
+
+                            <div class="col-md-8">
+                                <textarea class="form-control" id="message" rows="25" cols="10" placeholder="  Message..."></textarea>
+                                <button type="button" class="btn btn-default submit-btn form_submit">SEND MESSAGE</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END FORM --> 
+                    <br><br>&nbsp;
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- END CONTACT -->
 
 <!-- =========================
      FOOTER 

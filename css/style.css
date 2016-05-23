@@ -317,8 +317,8 @@ tuor:visited {
 
 .video_area {
     background: #e4e4e4;
-    padding-bottom: 140px;
-    padding-top: 120px;
+    /*padding-bottom: 140px;
+    padding-top: 120px;*/
 }
 .video_title {
     padding-bottom: 30px;
@@ -891,11 +891,11 @@ div.carousel-inner .item img {
     padding-bottom: 70px;
     background: transparent
 }
+.subscribe .section_title, .subscribe .section_title p{
+    color: #a4a4a4;
+}
 .subscribe .section_title h2{
 	color: #eaeaea;
-}
-.subscribe .section_title p{
-	color: #a4a4a4;
 }
 .subscribe_form {
     text-align: center;
@@ -1081,17 +1081,26 @@ select:-webkit-autofill {
 
 
 /****** TIMOSOLO ******/
-.inner_about_desc ul {
+
+
+.header.african {
+    background: url(../images/home2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right !important;
+}
+
+
+ul.biglist, .biglist ul {
     margin-left: 50px;
     font-size: 19px;
     line-height: 24px;
 }
-.inner_about_desc li {
-    color: #333;
+.biglist li {
     padding: 7px;
     list-style: none;
 }
-.inner_about_desc li:before {
+.biglist li:before {
   /* For a round bullet */
   content: '\2022';
   /* For a square bullet */
@@ -1104,6 +1113,11 @@ select:-webkit-autofill {
   top: 0;
   color: #fe8c25;
   font-size: 50px;
+}
+
+.subscribe ul.biglist {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 

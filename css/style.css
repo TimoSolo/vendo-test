@@ -1121,13 +1121,9 @@ ul.biglist, .biglist ul {
 }
 
 
-.about_phone img {    
-    position: absolute;
-    right: 0;
-} 
 @media (max-width: 991px)  {
-    .about_phone img {
-        position: static;
+    img {
+        max-width: 100%;
     }
 }
 

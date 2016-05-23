@@ -207,38 +207,38 @@ $(document).ready(function() {
 
 
 //RESPONSIVE VIDEO
-$(document).ready(function() {
+// $(document).ready(function() {
 
-    "use strict";
+//     "use strict";
     
-    // Basic FitVids Test
-    $(".video").fitVids();
-});
+//     // Basic FitVids Test
+//     $(".video").fitVids();
+// });
 
 
 
 //MAILCHIMP
-$(document).ready(function() {
+// $(document).ready(function() {
 
-    "use strict";
+//     "use strict";
     
-    $('#mc-form').ajaxChimp({
-        callback: mailchimpCallback,
-        url: "https://themerocks.us9.list-manage.com/subscribe/post?u=f04c804868966b1b4509daa9b&amp;id=ad7b6aba65"
-    });
+//     $('#mc-form').ajaxChimp({
+//         callback: mailchimpCallback,
+//         url: "https://themerocks.us9.list-manage.com/subscribe/post?u=f04c804868966b1b4509daa9b&amp;id=ad7b6aba65"
+//     });
 
-    function mailchimpCallback(resp) {
+//     function mailchimpCallback(resp) {
 
-        "use strict";
+//         "use strict";
         
-        if (resp.result === 'success') {
-            $('.subscription-success').html('<i class="pe-7s-check"></i><br/>' + resp.msg).fadeIn(1000);
-            $('.subscription-error').fadeOut(500);
-        } else if (resp.result === 'error') {
-            $('.subscription-error').html('<i class="pe-7s-close-circle"></i><br/>' + resp.msg).fadeIn(1000);
-        }
-    }
-});
+//         if (resp.result === 'success') {
+//             $('.subscription-success').html('<i class="pe-7s-check"></i><br/>' + resp.msg).fadeIn(1000);
+//             $('.subscription-error').fadeOut(500);
+//         } else if (resp.result === 'error') {
+//             $('.subscription-error').html('<i class="pe-7s-close-circle"></i><br/>' + resp.msg).fadeIn(1000);
+//         }
+//     }
+// });
 
 
 

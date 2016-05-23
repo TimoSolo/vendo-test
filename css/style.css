@@ -1081,7 +1081,9 @@ select:-webkit-autofill {
 
 
 /****** TIMOSOLO ******/
-
+.subscribe {
+    background-color: black;
+}
 
 .header.african {
     background: url(../images/home2.jpg);

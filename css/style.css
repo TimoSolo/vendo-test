@@ -1081,6 +1081,10 @@ select:-webkit-autofill {
 
 
 /****** TIMOSOLO ******/
+
+.navbar-fixed-top {
+    max-width: 1vw; /* prevent expanding with sliding offscreen objects */
+}
 .subscribe {
     background-color: black;
 }

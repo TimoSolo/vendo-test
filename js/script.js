@@ -243,6 +243,20 @@ $(document).ready(function() {
 
 
 //CONTACT FORM VALIDATION
+sentmail = function(data) {
+    $(".Sucess").show();
+    $(".Sucess").fadeIn(2000);
+    $(".Sucess").html("<i class='fa fa-check'></i> Dear <b>" + $("#name").val() + "</b> Thank you for your inquiry we will respond to you as soon as possible!");
+    $("#Name").val("");
+    $("#Email").val("");
+    $("#Subject").val("");
+    $("#Message").val("");
+    $(".form_error .name_error, .form_error .email_error, .form_error .email_val_error, .form_error .message_error").addClass("hide").removeClass("show");
+    $("#name").val("");
+    $("#email").val("");
+    $("#subject").val("");
+    $("#message").val("");
+}
 $(document).ready(function() {
 
     "use strict";
@@ -255,7 +269,7 @@ $(document).ready(function() {
         var emaild = $("#email").val();
         var subject = $("#subject").val();
         var message = $("#message").val();
-        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,10}$/i;
         if (!name) {
             $(".form_error .name_error").addClass("show").removeClass("hide");
             return false;
@@ -282,28 +296,16 @@ $(document).ready(function() {
         }
         if (name && emaild && message) {
             $.ajax({
-                url: 'contact.php',
+                url: 'https://docs.google.com/forms/d/1cq3dZEqhtBh5r34TkohEnymT2tJXtl4MWumcwFcFz90/formResponse',
                 data: {
-                    name: name,
-                    emaild: emaild,
-                    subject: subject,
-                    message: message
+                    "entry.1432786648": name,
+                    "entry.1592383048": emaild,
+                    "entry.21911664": subject,
+                    "entry.1652165143": message
                 },
                 type: 'POST',
-                success: function(data) {
-                    $(".Sucess").show();
-                    $(".Sucess").fadeIn(2000);
-                    $(".Sucess").html("<i class='fa fa-check'></i> Dear <b>" + name + "</b> Thank you for your inquiry we will respond to you as soon as possible!");
-                    $("#Name").val("");
-                    $("#Email").val("");
-                    $("#Subject").val("");
-                    $("#Message").val("");
-                    $(".form_error .name_error, .form_error .email_error, .form_error .email_val_error, .form_error .message_error").addClass("hide").removeClass("show");
-                    $("#name").val("");
-                    $("#email").val("");
-                    $("#subject").val("");
-                    $("#message").val("");
-                }
+                error: sentmail,
+                success: sentmail
             });
         }
         return false;

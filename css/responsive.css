@@ -16,7 +16,7 @@
         text-align: center;
     }
     .video {
-        padding-top: 50px;
+        padding-top: 10px;
     }
     .video-button {
         text-align: center;
@@ -59,7 +59,7 @@
         padding-bottom: 60px;
     }
     .video {
-        padding-top: 50px;
+        padding-top: 10px;
     }
 }
 /* This Css is for Medium Deviced */
@@ -85,7 +85,7 @@
         padding-bottom: 0px;
     }
     .video {
-        padding-top: 00px;
+        padding-top: 111px;
     }
 }
 /* This Css is for large Deviced */
@@ -105,9 +105,6 @@
     }
     .call_to_action .col-md-3 {
         text-align: right;
-        padding-top: 0px;
-    }
-    .video {
         padding-top: 0px;
     }
 }
